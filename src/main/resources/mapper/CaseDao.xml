@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CaseDao">
+      <resultMap type="entity.Case" id="CaseResult">
+          <id column="id" javaType="INTEGER" property="id" />
+          <result column="name" javaType="String" property="name" />
+          <result column="description" javaType="String" property="description" />
+          <result column="case_id" javaType="String" property="case_id" />
+          <result column="group_name" javaType="String" property="group_name" />
+          <result column="path" javaType="String" property="path" />
+          <result column="ctime" javaType="java.sql.Timestamp" property="ctime" />
+          <result column="utime" javaType="java.sql.Timestamp" property="utime" />
+          <result column="id" javaType="INTEGER" property="id" />
+      </resultMap>
+
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="find" parameterType="Map" resultMap="CaseResult">
+        <!-- 具体的sql -->
+        SELECT
+            *
+        FROM
+            `case`
+        WHERE 1
+            <if test="id != null and id != ''">
+               and id = #{id,jdbcType=VARCHAR}
+            </if>  
+            <if test="begin_time != null and begin_time != ''">  
+                and ctime &gt;= #{begin_time,jdbcType=TIMESTAMP}
+            </if>  
+            <if test="end_time != null and end_time != ''">  
+                and ctime &lt;= #{end_time,jdbcType=TIMESTAMP}
+            </if>
+    </select>
+
+    <select id="isExist" parameterType="Map" resultMap="CaseResult">
+   SELECT
+       *
+   FROM
+       `case`
+   WHERE 0
+       <if test="case_id != null and case_id != ''">  
+           or case_id = #{case_id,jdbcType=INTEGER}  
+       </if>
+    </select>
+
+    <select id="findByIntId" parameterType="Map" resultMap="CaseResult">
+        <!-- 具体的sql -->
+        SELECT
+            *
+        FROM
+            `case`
+        WHERE id = #{id,jdbcType=INTEGER} 
+    </select>
+
+    <select id="all" parameterType="String" resultMap="CaseResult">
+        SELECT
+            *
+        FROM
+            `case`
+    </select>
+    
+    <update id="update" parameterType="entity.Case"  
+        flushCache="true">  
+        update `case`  
+        <set>  
+            <if test="id != null and id != ''">
+                id = #{id,jdbcType=VARCHAR},
+            </if>  
+            <if test="group_name != null and group_name != ''">  
+                group_name = #{group_name,jdbcType=VARCHAR},  
+            </if>  
+            <if test="case_id != null and case_id != ''">  
+                case_id = #{case_id,jdbcType=VARCHAR},  
+            </if>  
+            <if test="name != null and name != ''">  
+                name = #{name,jdbcType=VARCHAR},  
+            </if>
+        </set>  
+        where id = #{id,jdbcType=INTEGER}  
+    </update>
+
+    <insert id="insert" parameterType="entity.Case">  
+        INSERT INTO `case` (name,
+                          case_id,  
+                          id,
+                          group_name,
+                          path)
+              VALUES   (#{name},  
+                          #{case_id},  
+                          #{id},
+                          #{group_name},  
+                          #{path})  
+	</insert>
+
+	<insert id="delete" parameterType="entity.Case">  
+        DELETE FROM `case` where id = #{id}  
+	</insert>
+</mapper>

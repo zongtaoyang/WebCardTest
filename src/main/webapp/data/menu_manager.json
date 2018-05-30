@@ -1,0 +1,24 @@
+{
+    "menus": [
+        {
+            "icon": "icon-sys", 
+            "menuid": "1", 
+            "menuname": "系统管理", 
+            "url": "", 
+            "menus": [
+                {
+                    "icon": "icon-log", 
+                    "menuid": "1_1", 
+                    "menuname": "人员管理", 
+                    "url": "user/manageuser.action"
+                },
+                {
+                    "icon": "icon-log", 
+                    "menuid": "1_2", 
+                    "menuname": "項目管理", 
+                    "url": "project/manageproject.action"
+                }
+            ]
+        }
+    ]
+}

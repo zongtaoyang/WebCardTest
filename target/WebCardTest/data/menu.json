@@ -1,0 +1,48 @@
+{
+  "menus": [
+    {
+      "icon": "icon-sys",
+      "menuid": "1",
+      "menuname": "系统管理",
+      "url": "",
+      "menus": [
+        {
+          "icon": "icon-log",
+          "menuid": "1_1",
+          "menuname": "項目管理",
+          "url": "WebCardTest/project/manageproject"
+        },
+        {
+          "icon": "icon-log",
+          "menuid": "1_2",
+          "menuname": "人员管理",
+          "url": "WebCardTest/user/manageuser"
+        },
+        {
+          "icon": "icon-log",
+          "menuid": "1_3",
+          "menuname": "分组管理",
+          "url": "group"
+        },
+        {
+          "icon": "icon-log",
+          "menuid": "1_4",
+          "menuname": "案例管理",
+          "url": "script"
+        },
+        {
+          "icon": "icon-log",
+          "menuid": "1_5",
+          "menuname": "运行记录",
+          "url": "execute"
+        },
+        {
+          "icon": "icon-log",
+          "menuid": "1_6",
+          "menuname": "登录记录",
+          "url": "history"
+        }
+      ]
+    }
+  ]
+}

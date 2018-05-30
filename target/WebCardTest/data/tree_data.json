@@ -1,0 +1,24 @@
+[
+    {
+        "id": "1", 
+        "name": "频谱项目", 
+        "memo": "军用频谱项目", 
+        "role": null, 
+        "children": [
+            {
+                "id": "2", 
+                "name": "杨国泉", 
+                "memo": "aaaaaa", 
+                "role": "1", 
+                "children": null
+            }
+        ]
+    }, 
+    {
+        "id": "3", 
+        "name": "工地项目", 
+        "memo": "工地安全保障项目", 
+        "role": null, 
+        "children": null
+    }
+]

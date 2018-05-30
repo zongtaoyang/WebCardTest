@@ -1,0 +1,24 @@
+{
+    "menus": [
+        {
+            "icon": "icon-sys", 
+            "menuid": "1", 
+            "menuname": "任务管理 ", 
+            "url": "", 
+            "menus": [
+                {
+                    "icon": "icon-log", 
+                    "menuid": "1_1", 
+                    "menuname": "我的任务", 
+                    "url": "task/myTasks.action"
+                },
+                {
+                    "icon": "icon-log", 
+                    "menuid": "1_2", 
+                    "menuname": "我的bug", 
+                    "url": "task/myBug.action"
+                }
+            ]
+        }
+    ]
+}

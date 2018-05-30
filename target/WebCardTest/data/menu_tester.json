@@ -1,0 +1,18 @@
+{
+    "menus": [
+        {
+            "icon": "icon-sys", 
+            "menuid": "1", 
+            "menuname": "测试管理 ", 
+            "url": "", 
+            "menus": [
+                {
+                    "icon": "icon-log", 
+                    "menuid": "1_1", 
+                    "menuname": "测试任务", 
+                    "url": "task/testingtask.action"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.ExecuteDao">
+      <resultMap type="entity.Execute" id="ExecuteResult">
+          <id column="id" javaType="INTEGER" property="id" />
+          <result column="case_id" javaType="INTEGER" property="case_id" />
+          <result column="user_name" javaType="String" property="user_name" />
+          <result column="case_id" javaType="INTEGER" property="case_id" />
+          <result column="case_name" javaType="String" property="case_name" />
+          <result column="result_code" javaType="INTEGER" property="result_code" />
+          <result column="result_info" javaType="String" property="result_info" />
+          <result column="ctime" javaType="java.sql.Timestamp" property="ctime" />
+      </resultMap>
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+     <select id="find" parameterType="Map" resultMap="ExecuteResult">
+        SELECT
+            *
+        FROM
+            `exec_his`
+        WHERE 1
+            <if test="case_id != null and case_id != ''">  
+                and case_id = #{case_id,jdbcType=INTEGER}  
+            </if>  
+            <if test="case_id != null and case_id != ''">
+                and case_id = #{case_id,jdbcType=INTEGER}
+            </if>
+    </select>
+    <select id="all" parameterType="String" resultMap="ExecuteResult">
+        SELECT
+            *
+        FROM
+            `exec_his`
+    </select>
+<!--     
+    <update id="update" parameterType="entity.Case"  
+        flushCache="true">  
+        update `case`  
+        <set>  
+            <if test="login_name != null and login_name != ''">
+                login_name = #{login_name,jdbcType=VARCHAR},
+            </if>  
+            <if test="password != null and password != ''">  
+                password = #{password,jdbcType=VARCHAR},  
+            </if>  
+            <if test="user_name != null and user_name != ''">
+                user_name = #{user_name,jdbcType=VARCHAR},
+            </if>  
+            <if test="phone != null and phone != ''">  
+                phone = #{phone,jdbcType=VARCHAR},  
+            </if>
+        </set>  
+        where id = #{id,jdbcType=INTEGER}  
+    </update>
+    <insert id="insert" parameterType="entity.Case">  
+        INSERT INTO `case` (user_name,
+                          password,  
+                          login_name,
+                          phone,
+                          role)
+              VALUES   (#{user_name},
+                          #{password},  
+                          #{login_name},
+                          #{phone},  
+                          #{role})  
+	</insert>    
+	<insert id="delete" parameterType="entity.Case">  
+        DELETE FROM `case` where id = #{id}  
+	</insert> -->
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.ProjectUserDao">
+    <resultMap type="entity.ProjectUser" id="ProjectUserResult">
+        <id column="id" javaType="int" property="id"/>
+        <result column="project_id" javaType="int" property="project_id"/>
+        <result column="user_id" javaType="int" property="user_id"/>
+        <result column="create_time" javaType="java.sql.Timestamp" property="create_time"/>
+    </resultMap>
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+
+    <select id="all" parameterType="String" resultMap="ProjectUserResult">
+        SELECT * FROM `project_user`
+    </select>
+
+    <select id="isExist" parameterType="Map" resultMap="ProjectUserResult">
+        SELECT * FROM `project_user`
+        WHERE 0
+        <if test="id != null and id != ''">
+            or id = #{id,jdbcType=INTEGER}
+        </if>
+        <if test="user_id != null and user_id != ''">
+            or user_id = #{user_id,jdbcType=INTEGER}
+        </if>
+    </select>
+
+    <update id="update" parameterType="entity.ProjectUser"
+            flushCache="true">
+        update `project_user`
+        <set>
+            <if test="id != null and id != ''">
+                id = #{id,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <set>
+            <if test="project_id != null and project_id != ''">
+                project_id = #{project_id,jdbcType=VARCHAR},
+            </if>
+            <if test="user_id != null and user_id != ''">
+                user_id = #{user_id,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <insert id="insert" parameterType="entity.ProjectUser">
+        INSERT INTO `project_user` (id, user_id)
+              VALUES   (#{id}, #{user_id})
+	</insert>
+
+    <delete id="delete" parameterType="entity.ProjectUser">
+        DELETE FROM `project_user` where id = #{id}
+	</delete>
+
+    <select id="findByIntId" parameterType="int" resultMap="ProjectUserResult">
+        SELECT * FROM `project_user`
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="getTotalByProjectId" parameterType="int" resultType="Long">
+        SELECT COUNT(*) FROM `project_user`
+        where project_id = #{project_id,jdbcType=INTEGER}
+    </select>
+
+    <select id="getTotalByUserId" parameterType="int" resultType="Long">
+        SELECT COUNT(*) FROM `project_user`
+        where user_id = #{user_id,jdbcType=INTEGER}
+    </select>
+
+    <!-- 按照project id查询，列出同一个项目的user列表 -->
+    <select id="findByProjectId" parameterType="int" resultMap="ProjectUserResult">
+        SELECT * FROM `project_user`
+        where project_id = #{project_id,jdbcType=INTEGER}
+    </select>
+
+    <!-- 按照project id查询，列出同一个项目的user列表 -->
+    <select id="findByProjectIdWithPage" parameterType="Map" resultMap="ProjectUserResult">
+        SELECT * FROM `project_user`
+        where project_id = #{project_id,jdbcType=INTEGER}
+        <if test="page!=null and rows!=null">
+            limit #{page},#{rows}
+        </if>
+    </select>
+
+    <!-- 按照user id 查询，列出同一个user的项目列表 -->
+    <select id="findByUserId" parameterType="int" resultMap="ProjectUserResult">
+        SELECT
+        *
+        FROM
+        `project_user`
+        where user_id = #{user_id,jdbcType=INTEGER}
+    </select>
+
+
+</mapper>

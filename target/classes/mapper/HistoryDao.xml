@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.HistoryDao">
+    <resultMap type="entity.History" id="HistoryResult">
+        <id column="id" javaType="INTEGER" property="id"/>
+        <result column="case_id" javaType="INTEGER" property="case_id"/>
+        <result column="user_name" javaType="String" property="user_name"/>
+        <result column="ctime" javaType="java.sql.Timestamp" property="ctime"/>
+    </resultMap>
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="find" parameterType="Map" resultMap="HistoryResult">
+        SELECT
+        *
+        FROM
+        `login_his`
+        WHERE 1
+        <if test="case_id != null and case_id != ''">
+            and case_id = #{case_id,jdbcType=INTEGER}
+        </if>
+    </select>
+
+    <!-- 查询所有 -->
+    <select id="all" parameterType="String" resultMap="HistoryResult">
+        SELECT
+            *
+        FROM
+            `login_his`
+    </select>
+</mapper>

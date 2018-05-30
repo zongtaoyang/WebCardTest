@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.GroupDao">
+      <resultMap type="entity.CGroup" id="GroupResult">
+          <id column="id" javaType="INTEGER" property="id" />
+          <result column="group_id" javaType="String" property="group_id" />
+          <result column="name" javaType="String" property="name" />
+          <result column="ctime" javaType="java.sql.Timestamp" property="ctime" />
+          <result column="utime" javaType="java.sql.Timestamp" property="utime" />
+      </resultMap>
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="all" parameterType="String" resultMap="GroupResult">
+        SELECT
+            *
+        FROM
+            `group`
+    </select>
+    <select id="isExist" parameterType="Map" resultMap="GroupResult">
+	   SELECT
+	       *
+	   FROM
+	       `group`
+	   WHERE 0
+       <if test="id != null and id != ''">
+           or id = #{id,jdbcType=INTEGER}
+       </if>
+       <if test="name != null and name != ''">  
+           or name = #{name,jdbcType=INTEGER}  
+       </if>
+    </select>
+    <update id="update" parameterType="entity.CGroup"  
+        flushCache="true">  
+        update `group`  
+        <set>  
+            <if test="name != null and name != ''">  
+                name = #{name,jdbcType=VARCHAR},  
+            </if>
+        </set>  
+        where id = #{id,jdbcType=INTEGER}  
+    </update>
+    <insert id="insert" parameterType="entity.CGroup">  
+        INSERT INTO `group` (name, id, tester_list, case_list)
+              VALUES   (#{name}, #{id}, #{tester_list}, #{case_list})
+	</insert>    
+	<insert id="delete" parameterType="entity.CGroup">  
+        DELETE FROM `group` where id = #{id}  
+	</insert>
+    <select id="findByIntId" parameterType="int" resultMap="GroupResult">
+        SELECT
+            *
+        FROM
+            `group`
+        where id = #{id,jdbcType=INTEGER}
+    </select>	
+</mapper>

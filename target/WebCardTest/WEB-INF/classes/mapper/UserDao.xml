@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+    <resultMap type="entity.User" id="UserResult">
+        <id column="id" javaType="INTEGER" property="id"/>
+        <result column="login_name" javaType="String" property="login_name"/>
+        <result column="password" javaType="String" property="password"/>
+        <result column="user_name" javaType="String" property="user_name"/>
+        <result column="phone" javaType="String" property="phone"/>
+        <result column="last_login_time" javaType="java.sql.Timestamp" property="last_login_time"/>
+        <result column="ctime" javaType="java.sql.Timestamp" property="ctime"/>
+        <result column="utime" javaType="java.sql.Timestamp" property="utime"/>
+        <result column="role" javaType="String" property="role"/>
+    </resultMap>
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="login" parameterType="String" resultMap="UserResult">
+        <!-- 具体的sql -->
+        SELECT * FROM `user`
+        WHERE
+        login_name = #{login_name} AND password = #{password}
+    </select>
+
+    <select id="all" parameterType="String" resultMap="UserResult">
+        <!-- 具体的sql -->
+        SELECT * FROM `user`
+    </select>
+
+    <select id="getTotal" parameterType="Map" resultType="Long">
+        SELECT COUNT(*) FROM `user`
+        <where>
+            <if test="user_name!=null and user_name!='' ">
+                and user_name like #{user_name}
+            </if>
+            <if test="login_name!=null and login_name!='' ">
+                and login_name like #{login_name}
+            </if>
+        </where>
+    </select>
+
+    <select id="find" parameterType="Map" resultMap="UserResult">
+        SELECT * FROM `user`
+        <where>
+            <if test="user_name!=null and user_name!='' ">
+                and user_name like #{user_name}
+            </if>
+            <if test="login_name!=null and login_name!='' ">
+                and login_name like #{login_name}
+            </if>
+        </where>
+        <if test="page!=null and rows!=null">
+            limit #{page},#{rows}
+        </if>
+    </select>
+
+    <update id="update" parameterType="entity.User"
+            flushCache="true">
+        update `user`
+        <set>
+            <if test="login_name != null and login_name != ''">
+                login_name = #{login_name,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="user_name != null and user_name != ''">
+                user_name = #{user_name,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <insert id="insert" parameterType="entity.User">  
+        INSERT INTO `user` (user_name,
+                          password,  
+                          login_name,
+                          phone,
+                          role)
+              VALUES   (#{user_name},
+                          #{password},  
+                          #{login_name},
+                          #{phone},  
+                          #{role})  
+	</insert>
+
+    <insert id="delete" parameterType="entity.User">
+        DELETE FROM `user` where id = #{id}
+	</insert>
+
+    <select id="findByIntId" parameterType="int" resultMap="UserResult">
+        SELECT        *        FROM        `user`
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+</mapper>

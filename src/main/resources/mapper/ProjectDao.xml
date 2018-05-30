@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.ProjectDao">
+    <resultMap type="entity.Project" id="ProjectResult">
+        <id column="id" javaType="INTEGER" property="id"/>
+        <result column="name" javaType="String" property="name"/>
+        <result column="description" javaType="String" property="description"/>
+        <result column="create_time" javaType="java.sql.Timestamp" property="create_time"/>
+        <result column="update_time" javaType="java.sql.Timestamp" property="update_time"/>
+    </resultMap>
+
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="all" parameterType="String" resultMap="ProjectResult">
+        SELECT * FROM `project`
+    </select>
+
+    <select id="getTotal" parameterType="Map" resultType="Long">
+        SELECT COUNT(*) FROM `project`
+        <where>
+            <if test="name!=null and name!='' ">
+                and name like #{name}
+            </if>
+        </where>
+    </select>
+
+    <select id="find" parameterType="Map" resultMap="ProjectResult">
+        SELECT * FROM `project`
+        <where>
+            <if test="name!=null and name!='' ">
+                and name like #{name}
+            </if>
+        </where>
+        <if test="page!=null and rows!=null">
+            limit #{page},#{rows}
+        </if>
+    </select>
+
+    <select id="findByName" parameterType="String" resultMap="ProjectResult">
+        SELECT * FROM `project`
+        WHERE name LIKE #{name,jdbcType=VARCHAR}
+    </select>
+
+    <select id="isExist" parameterType="Map" resultMap="ProjectResult">
+        SELECT * FROM `project`
+        WHERE 0
+        <if test="id != null and id != ''">
+            or id = #{id,jdbcType=INTEGER}
+        </if>
+        <if test="name != null and name != ''">
+            or name = #{name,jdbcType=INTEGER}
+        </if>
+    </select>
+
+    <update id="update" parameterType="entity.Project"
+            flushCache="true">
+        update `project`
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <insert id="insert" parameterType="entity.Project">
+        INSERT INTO `project` (id, name, description)
+              VALUES   (#{id}, #{name}, #{description})
+	</insert>
+
+    <delete id="delete" parameterType="entity.Project">
+        DELETE FROM `project` where id = #{id}
+	</delete>
+
+    <select id="findByIntId" parameterType="int" resultMap="ProjectResult">
+        SELECT
+            *
+        FROM
+            `project`
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+</mapper>
