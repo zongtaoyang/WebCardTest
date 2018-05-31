@@ -105,7 +105,7 @@
                 <%--createmodalwindow("查看项目组员：" + row.name, 600, 450, '${baseurl}WebCardTest/project/toeditprojectuser?id=' + id);--%>
 
                 $('#ddv-'+index).datagrid({
-                    url:'${baseurl}WebCardTest/project/findProjectUserByProjectId',
+                    url:'${baseurl}WebCardTest/project/findProjectUser',
                     type: 'post',
                     queryParams: {
                         project_id: id
@@ -154,6 +154,22 @@
 
         }
 
+        //“编辑组员”按钮响应函数
+        function doAddUser(index) {
+            $('#projectTreeGrid').datagrid('selectRow', index);// 关键在这里
+            var row = $('#projectTreeGrid').datagrid('getSelected');
+            if (row) {
+                var id = row.id;
+                createmodalwindow("查看项目组员：" + row.name, 600, 450, '${baseurl}WebCardTest/project/toeditprojectuser?id=' + id);
+            } else {
+                $.messager.alert('提示信息', '请选择一条记录！', 'warning');
+                return;
+            }
+
+
+
+        }
+
         //“编辑用例”按钮响应函数
         function doEditCase(index,row) {
             $('#projectTreeGrid').datagrid('selectRow', index);// 关键在这里
@@ -162,7 +178,7 @@
                 var id = row.id;
                 <%--createmodalwindow("查看项目用例：" + row.name, 600, 450, '${baseurl}WebCardTest/project/toeditprojectcase?id=' + id);--%>
                 $('#ddv-'+index).datagrid({
-                    url:'${baseurl}WebCardTest/project/findProjectCaseByProjectId',
+                    url:'${baseurl}WebCardTest/project/findProjectCase',
                     type: 'post',
                     queryParams: {
                         project_id: id
@@ -202,6 +218,20 @@
                     }
                 });
                 $('#projectTreeGrid').datagrid('fixDetailRowHeight',index);
+            } else {
+                $.messager.alert('提示信息', '请选择一条记录！', 'warning');
+                return;
+            }
+
+        }
+
+        //“编辑用例”按钮响应函数
+        function doAddCase(index) {
+            $('#projectTreeGrid').datagrid('selectRow', index);// 关键在这里
+            var row = $('#projectTreeGrid').datagrid('getSelected');
+            if (row) {
+                var id = row.id;
+                createmodalwindow("查看项目用例：" + row.name, 600, 450, '${baseurl}WebCardTest/project/toeditprojectcase?id=' + id);
             } else {
                 $.messager.alert('提示信息', '请选择一条记录！', 'warning');
                 return;
@@ -272,7 +302,10 @@
                 <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="doAdd()">添加</a>
                 <a class="easyui-linkbutton" plain="true" iconCls="icon-edit" onclick="doEdit()">修改</a>
                 <a class="easyui-linkbutton" plain="true" iconCls="icon-remove" onclick="doDelete()">删除 </a>
-                <a class="easyui-linkbutton" plain="true" iconCls="icon-remove" onclick="doChangeShow()">显示项目与测试员</a>
+                <a class="easyui-linkbutton" plain="true" iconCls="icon-reload" onclick="doChangeShow()">【测试员】or【用例】详情</a>
+                <a > | </a>
+                <a class="easyui-linkbutton" plain="true" iconCls="icon-edit" onclick="doAddCase()">添加用例</a>
+                <a class="easyui-linkbutton" plain="true" iconCls="icon-edit" onclick="doAddUser()">添加人员</a>
             </div>
 
             <%-- 项目查询表 --%>

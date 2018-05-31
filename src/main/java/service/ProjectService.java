@@ -12,9 +12,9 @@ public interface ProjectService extends BaseService<Project> {
 
     public ArrayList<ProjectStatistic> findByNameWithPage(Map<String, Object> map);
 
-    public ArrayList<User> findProjectUserByProjectId(Map<String, Object> map);
+    public ArrayList<User> findProjectUser(Map<String, Object> map);
 
-    public ArrayList<Case> findProjectCaseByProjectId(Map<String, Object> map);
+    public ArrayList<Case> findProjectCase(Map<String, Object> map);
 
     public int addUserToProject(int projectId, int userId);
 

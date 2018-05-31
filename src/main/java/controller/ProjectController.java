@@ -218,10 +218,10 @@ public class ProjectController {
         return result;
     }
 
-    @RequestMapping(value = "/findProjectUserByProjectId", method = RequestMethod.POST)
+    @RequestMapping(value = "/findProjectUser", method = RequestMethod.POST)
     @ResponseBody
     private Map<String, Object> findProjectUserByProjectId(HttpServletRequest request) throws IllegalArgumentException {
-        System.out.println(TAG + "findProjectUserByProjectId->");
+        System.out.println(TAG + "findProjectUser->");
 
         Map<String, Object> result = new HashMap<String, Object>();
         String project_id = request.getParameter("project_id");
@@ -234,7 +234,7 @@ public class ProjectController {
         map.put("project_id", project_id);
         map.put("page", pageBean.getStart());
         map.put("rows", pageBean.getRows());
-        ArrayList<User> array = projectService.findProjectUserByProjectId(map);
+        ArrayList<User> array = projectService.findProjectUser(map);
         Long total = projectService.getProjectUserTotal(map);
 //        JSONObject result=new JSONObject();
 //        JSONArray jsonArray=JSONArray.fromObject(userList);
@@ -247,10 +247,10 @@ public class ProjectController {
     }
 
 
-    @RequestMapping(value = "/findProjectCaseByProjectId", method = RequestMethod.POST)
+    @RequestMapping(value = "/findProjectCase", method = RequestMethod.POST)
     @ResponseBody
     private Map<String, Object> findProjectCaseByProjectId(HttpServletRequest request) throws IllegalArgumentException {
-        System.out.println(TAG + "findProjectCaseByProjectId->");
+        System.out.println(TAG + "findProjectCase->");
 
         Map<String, Object> result = new HashMap<String, Object>();
         String project_id = request.getParameter("project_id");
@@ -263,7 +263,7 @@ public class ProjectController {
         map.put("project_id", project_id);
         map.put("page", pageBean.getStart());
         map.put("rows", pageBean.getRows());
-        ArrayList<Case> array = projectService.findProjectCaseByProjectId(map);
+        ArrayList<Case> array = projectService.findProjectCase(map);
         Long total = projectService.getProjectCaseTotal(map);
 //        JSONObject result=new JSONObject();
 //        JSONArray jsonArray=JSONArray.fromObject(userList);

@@ -50,6 +50,15 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
         this.caseDao = caseDao;
     }
 
+
+    //==============================================================================
+    //               project
+    //==============================================================================
+    /**
+     * 查询Project信息
+     * @param map
+     * @return
+     */
     @Override
     public ArrayList<ProjectStatistic> findByNameWithPage(Map<String, Object> map) {
         ArrayList<ProjectStatistic> statisticsArray = new ArrayList<ProjectStatistic>();
@@ -92,39 +101,31 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
         return statisticsArray;
     }
 
-    @Override
-    public ArrayList<User> findProjectUserByProjectId(Map<String, Object> map) {
-        ArrayList<User> users = new ArrayList<User>();
-        ArrayList<ProjectUser> projectUsers = projectUserDao.findByProjectIdWithPage(map);
-        for(int i=0;i<projectUsers.size();i++){
-            User user = userDao.findByIntId(projectUsers.get(i).getUser_id());
-            user.setCtime(projectUsers.get(i).getCreate_time());
-            users.add(user);
-        }
-        return users;
-    }
-
-    @Override
-    public ArrayList<Case> findProjectCaseByProjectId(Map<String, Object> map){
-        ArrayList<Case> cases = new ArrayList<Case>();
-        ArrayList<ProjectCase> projectCases = projectCaseDao.findByProjectIdWithPage(map);
-        for(int i=0;i<projectCases.size();i++){
-            Case acase = caseDao.findByIntId(projectCases.get(i).getCase_id());
-            acase.setCtime(projectCases.get(i).getCreate_time());
-            cases.add(acase);
-        }
-        return cases;
-    }
-
-    @Override
-    public int addUserToProject(int projectId, int userId) {
-        ProjectUser projectUser =new ProjectUser(projectId, userId);
-        return projectUserDao.insert(projectUser);
-    }
 
     @Override
     public Long getProjectTotal(Map<String,Object> map) {
         return projectDao.getTotal(map);
+    }
+
+
+    //==============================================================================
+    //               project_user
+    //==============================================================================
+    @Override
+    public ArrayList<User> findProjectUser(Map<String, Object> map) {
+
+        ArrayList<User> users = new ArrayList<User>();
+
+        if(map.get("project_id")!=null&&map.get("project_id")!=""){
+            ArrayList<ProjectUser> projectUsers = projectUserDao.findByProjectIdWithPage(map);
+            for(int i=0;i<projectUsers.size();i++){
+                User user = userDao.findByIntId(projectUsers.get(i).getUser_id());
+                user.setCtime(projectUsers.get(i).getCreate_time());
+                users.add(user);
+            }
+        }
+
+        return users;
     }
 
     @Override
@@ -141,6 +142,34 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
             return projectUserDao.getTotalByUserId(user_id);
         }
         return Long.valueOf(-1);
+    }
+
+    @Override
+    public int addUserToProject(int projectId, int userId) {
+        ProjectUser projectUser =new ProjectUser(projectId, userId);
+        return projectUserDao.insert(projectUser);
+    }
+
+
+
+    //==============================================================================
+    //               project_case
+    //==============================================================================
+    @Override
+    public ArrayList<Case> findProjectCase(Map<String, Object> map){
+
+        ArrayList<Case> cases = new ArrayList<Case>();
+
+        if(map.get("project_id")!=null&&map.get("project_id")!=""){
+            ArrayList<ProjectCase> projectCases = projectCaseDao.findByProjectIdWithPage(map);
+            for(int i=0;i<projectCases.size();i++){
+                Case acase = caseDao.findByIntId(projectCases.get(i).getCase_id());
+                acase.setCtime(projectCases.get(i).getCreate_time());
+                cases.add(acase);
+            }
+        }
+
+        return cases;
     }
 
     @Override

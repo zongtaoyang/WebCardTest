@@ -49,7 +49,7 @@
                 title: '项目用例信息列表',//数据列表标题
                 nowrap: true,//单元格中的数据不换行，如果为true表示不换行，不换行情况下数据加载性能高，如果为false就是换行，换行数据加载性能不高
                 striped: true,//条纹显示效果
-                url: '${baseurl}WebCardTest/project/findProjectCaseByProjectId',//加载数据的连接，引连接请求过来是json数据
+                url: '${baseurl}WebCardTest/project/findProjectCase',//加载数据的连接，引连接请求过来是json数据
                 type: 'post',
                 queryParams: {
                     project_id: projectId

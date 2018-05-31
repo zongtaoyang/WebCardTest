@@ -49,11 +49,7 @@
                 title: '项目组员信息列表',//数据列表标题
                 nowrap: true,//单元格中的数据不换行，如果为true表示不换行，不换行情况下数据加载性能高，如果为false就是换行，换行数据加载性能不高
                 striped: true,//条纹显示效果
-                url: '${baseurl}WebCardTest/project/findProjectUserByProjectId',//加载数据的连接，引连接请求过来是json数据
-                type: 'post',
-                queryParams: {
-                    project_id: projectId
-                },
+                url: '${baseurl}WebCardTest/project/findProjectUser',//加载数据的连接，引连接请求过来是json数据
                 idField: 'id',//此字段很重要，数据结果集的唯一约束(重要)，如果写错影响 获取当前选中行的方法执行
                 loadMsg: '加载中...',
                 columns: columns_v,
@@ -64,14 +60,6 @@
                 rownumbers: true//是否显示行号
 
             });
-        }
-
-        //查询方法
-        function queryuser() {
-            //datagrid的方法load方法要求传入json数据，最终将 json转成key/value数据传入action
-            //将form表单数据提取出来，组成一个json
-            var formdata = $("#projectuserqueryForm").serializeJson();
-            $('#projectuserlist').datagrid('load', formdata);
         }
 
         function addprojectuser() {
