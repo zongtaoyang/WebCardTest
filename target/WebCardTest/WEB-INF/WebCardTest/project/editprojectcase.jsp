@@ -31,7 +31,7 @@
                 title: '用例描述',
                 width: "30%"
             }, {
-                field: 'ctime',//对应json中的key
+                field: 'create_time',//对应json中的key
                 title: '加入时间',
                 width: "39%",
                 formatter: function (date) {
@@ -49,15 +49,10 @@
                 title: '项目用例信息列表',//数据列表标题
                 nowrap: true,//单元格中的数据不换行，如果为true表示不换行，不换行情况下数据加载性能高，如果为false就是换行，换行数据加载性能不高
                 striped: true,//条纹显示效果
-                url: '${baseurl}WebCardTest/project/findProjectCase',//加载数据的连接，引连接请求过来是json数据
-                type: 'post',
-                queryParams: {
-                    project_id: projectId
-                },
+                url: '${baseurl}WebCardTest/case/find',//加载数据的连接，引连接请求过来是json数据
                 idField: 'id',//此字段很重要，数据结果集的唯一约束(重要)，如果写错影响 获取当前选中行的方法执行
                 loadMsg: '加载中...',
                 columns: columns_v,
-                toolbar: "#easyui_toolbar",
                 weight: "99%",
                 height: "auto",
                 pagination: true,//是否显示分页
@@ -66,18 +61,10 @@
             });
         }
 
-        //查询方法
-        function queryuser() {
-            //datagrid的方法load方法要求传入json数据，最终将 json转成key/value数据传入action
-            //将form表单数据提取出来，组成一个json
-            var formdata = $("#projectcasequeryForm").serializeJson();
-            $('#projectcaselist').datagrid('load', formdata);
-        }
-
-        function addprojectuser() {
+        function addprojectcase() {
             var records = $("#projectcaselist").datagrid("getSelections");
             if (records.length == 0) {
-                $.messager.alert('提示信息', '请选择用例！', 'warning');
+                $.messager.alert('提示信息', '请选择测试用例！', 'warning');
                 return;
             }
             var ids = '';
@@ -89,7 +76,7 @@
             }
             $.ajax({
                 type: 'post',
-                url: '${baseurl}WebCardTest/project/addprojectcase',
+                url: '${baseurl}WebCardTest/project/addUserToProject',
                 data: {"project_id": projectId, "case_ids": ids},
                 dataType: 'json',
                 success: function (res) {
@@ -103,35 +90,7 @@
                 }
             })
         }
-        function deleteprojectuser() {
-            var records = $("#projectcaselist").datagrid("getSelections");
-            if (records.length == 0) {
-                $.messager.alert('提示信息', '请选择人员！', 'warning');
-                return;
-            }
-            var ids = '';
-            for (var i = 0; i < records.length; i++) {
-                if (ids.length > 0) {
-                    ids += ',';
-                }
-                ids += records[i].id;
-            }
-            $.ajax({
-                type: 'post',
-                url: '${baseurl}WebCardTest/project/addprojectcase',
-                data: {"project_id": projectId, "user_ids": ids},
-                dataType: 'json',
-                success: function (res) {
-                    if (res.success) {
-                        $.messager.alert('提示信息', res.msg, 'success');
-                        parent.closemodalwindow();
-                        parent.queryproject();
-                    } else {
-                        $.messager.alert('提示信息', res.msg, 'error');
-                    }
-                }
-            })
-        }
+
     </script>
 
 </head>
@@ -145,8 +104,9 @@
          height: 48px; padding: 2px 5px; background: #fafafa;">
         <div style="height:50%; margin-top:12px;">
             <div style="float: left;vertical-align: middle;">
-                <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="addprojectuser()">添加</a>
-                <a class="easyui-linkbutton" plain="true" iconCls="icon-remove" onclick="deleteprojectuser()">删除 </a>
+                <a id="submitbtn"  class="easyui-linkbutton"   iconCls="icon-ok" href="#" onclick="addprojectcase()">提交</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a id="closebtn"  class="easyui-linkbutton" iconCls="icon-cancel" href="#" onclick="parent.closemodalwindow()">关闭</a>
             </div>
 
             <%-- 项目查询表 --%>

@@ -13,8 +13,8 @@ public class Case {
     private String case_id;
     private String group_name;
     private String path;
-    private Timestamp ctime;
-    private Timestamp utime;
+    private Timestamp create_time;
+    private Timestamp update_time;
 
     public Map toMap() throws IllegalArgumentException, IllegalAccessException {
         Map<String, Object> map = new HashMap<String, Object>();
@@ -67,20 +67,20 @@ public class Case {
         this.group_name = group_name;
     }
 
-    public Timestamp getCtime() {
-        return ctime;
+    public Timestamp getCreate_time() {
+        return create_time;
     }
 
-    public void setCtime(Timestamp ctime) {
-        this.ctime = ctime;
+    public void setCreate_time(Timestamp create_time) {
+        this.create_time = create_time;
     }
 
-    public Timestamp getUtime() {
-        return utime;
+    public Timestamp getUpdate_time() {
+        return update_time;
     }
 
-    public void setUtime(Timestamp utime) {
-        this.utime = utime;
+    public void setUpdate_time(Timestamp update_time) {
+        this.update_time = update_time;
     }
 
     public String getCase_id() {

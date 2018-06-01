@@ -31,7 +31,7 @@
                 title: '真实姓名',
                 width: "30%"
             }, {
-                field: 'ctime',//对应json中的key
+                field: 'create_time',//对应json中的key
                 title: '加入时间',
                 width: "39%",
                 formatter: function (date) {
@@ -49,11 +49,10 @@
                 title: '项目组员信息列表',//数据列表标题
                 nowrap: true,//单元格中的数据不换行，如果为true表示不换行，不换行情况下数据加载性能高，如果为false就是换行，换行数据加载性能不高
                 striped: true,//条纹显示效果
-                url: '${baseurl}WebCardTest/project/findProjectUser',//加载数据的连接，引连接请求过来是json数据
+                url: '${baseurl}WebCardTest/user/find',//加载数据的连接，引连接请求过来是json数据
                 idField: 'id',//此字段很重要，数据结果集的唯一约束(重要)，如果写错影响 获取当前选中行的方法执行
                 loadMsg: '加载中...',
                 columns: columns_v,
-                toolbar: "#easyui_toolbar",
                 width: "99%",
                 height: "auto",
                 pagination: true,//是否显示分页
@@ -77,49 +76,20 @@
             }
             $.ajax({
                 type: 'post',
-                url: '${baseurl}WebCardTest/project/addprojectuser',
+                url: '${baseurl}WebCardTest/project/addUserToProject',
                 data: {"project_id": projectId, "user_ids": ids},
                 dataType: 'json',
                 success: function (res) {
                     if (res.success) {
                         $.messager.alert('提示信息', res.msg, 'success');
                         parent.closemodalwindow();
-                        parent.queryproject();
                     } else {
                         $.messager.alert('提示信息', res.msg, 'error');
                     }
                 }
             })
         }
-        function deleteprojectuser() {
-            var records = $("#projectuserlist").datagrid("getSelections");
-            if (records.length == 0) {
-                $.messager.alert('提示信息', '请选择人员！', 'warning');
-                return;
-            }
-            var ids = '';
-            for (var i = 0; i < records.length; i++) {
-                if (ids.length > 0) {
-                    ids += ',';
-                }
-                ids += records[i].id;
-            }
-            $.ajax({
-                type: 'post',
-                url: '${baseurl}WebCardTest/project/addprojectuser',
-                data: {"project_id": projectId, "user_ids": ids},
-                dataType: 'json',
-                success: function (res) {
-                    if (res.success) {
-                        $.messager.alert('提示信息', res.msg, 'success');
-                        parent.closemodalwindow();
-                        parent.queryproject();
-                    } else {
-                        $.messager.alert('提示信息', res.msg, 'error');
-                    }
-                }
-            })
-        }
+
     </script>
 
 </head>
@@ -133,8 +103,9 @@
          height: 48px; padding: 2px 5px; background: #fafafa;">
         <div style="height:50%; margin-top:12px;">
             <div style="float: left;vertical-align: middle;">
-                <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="addprojectuser()">添加</a>
-                <a class="easyui-linkbutton" plain="true" iconCls="icon-remove" onclick="deleteprojectuser()">删除 </a>
+                <a id="submitbtn"  class="easyui-linkbutton"   iconCls="icon-ok" href="#" onclick="addprojectuser()">提交</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a id="closebtn"  class="easyui-linkbutton" iconCls="icon-cancel" href="#" onclick="parent.closemodalwindow()">关闭</a>
             </div>
 
             <%-- 项目查询表 --%>

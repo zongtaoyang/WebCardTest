@@ -5,7 +5,7 @@
         <id column="id" javaType="INTEGER" property="id"/>
         <result column="case_id" javaType="INTEGER" property="case_id"/>
         <result column="user_name" javaType="String" property="user_name"/>
-        <result column="ctime" javaType="java.sql.Timestamp" property="ctime"/>
+        <result column="create_time" javaType="java.sql.Timestamp" property="create_time"/>
     </resultMap>
     <!-- 目的：为dao接口方法提供sql语句配置 -->
     <select id="find" parameterType="Map" resultMap="HistoryResult">

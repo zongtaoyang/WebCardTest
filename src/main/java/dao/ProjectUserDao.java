@@ -13,4 +13,5 @@ public interface ProjectUserDao extends BaseDao<ProjectUser>{
     public ArrayList<ProjectUser> findByProjectId(int project_id);
     public ArrayList<ProjectUser> findByProjectIdWithPage(Map<String, Object> map);
     public ArrayList<ProjectUser> findByUserId(int id);
+    int deleteProjectUser(Map<String, Object> map);
 }

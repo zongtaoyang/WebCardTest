@@ -10,23 +10,17 @@
     <!-- 目的：为dao接口方法提供sql语句配置 -->
 
     <select id="all" parameterType="String" resultMap="ProjectCaseResult">
-        SELECT
-            *
-        FROM
-            `project_case`
+        SELECT            *        FROM            `project_case`
     </select>
 
     <select id="isExist" parameterType="Map" resultMap="ProjectCaseResult">
-        SELECT
-        *
-        FROM
-        `project_case`
+        SELECT * FROM `project_case`
         WHERE 0
-        <if test="id != null and id != ''">
-            or id = #{id,jdbcType=INTEGER}
+        <if test="project_id != null and project_id != ''">
+            and project_id = #{project_id,jdbcType=INTEGER}
         </if>
         <if test="case_id != null and case_id != ''">
-            or case_id = #{case_id,jdbcType=INTEGER}
+            and case_id = #{case_id,jdbcType=INTEGER}
         </if>
     </select>
 
@@ -47,34 +41,31 @@
     </update>
 
     <insert id="insert" parameterType="entity.ProjectCase">
-        INSERT INTO `project_case` (id, case_id)
-              VALUES   (#{id}, #{case_id})
+        INSERT INTO `project_case` (id, project_id, case_id)
+              VALUES   (#{id}, #{project_id}, #{case_id})
 	</insert>
 
     <delete id="delete" parameterType="entity.ProjectCase">
         DELETE FROM `project_case` where id = #{id}
 	</delete>
 
+    <delete id="deleteProjectCase" parameterType="Map">
+        DELETE FROM `project_case` where project_id = #{project_id} and case_id = #{case_id}
+    </delete>
+
     <select id="findByIntId" parameterType="int" resultMap="ProjectCaseResult">
-        SELECT
-            *
-        FROM
-            `project_case`
-        where id = #{id,jdbcType=INTEGER}
+        SELECT * FROM `project_case` where id = #{id,jdbcType=INTEGER}
     </select>
 
     <!-- 按照project id查询，列出同一个项目的case列表 -->
     <select id="findByProjectId" parameterType="int" resultMap="ProjectCaseResult">
-        SELECT
-        *
-        FROM
-        `project_case`
+        SELECT * FROM `project_case`
         where id = #{id,jdbcType=INTEGER}
     </select>
 
     <!-- 按照project id查询，列出同一个项目的case列表 -->
     <select id="findByProjectIdWithPage" parameterType="Map" resultMap="ProjectCaseResult">
-        SELECT        *        FROM        `project_case`
+        SELECT * FROM `project_case`
         where project_id = #{project_id,jdbcType=INTEGER}
         <if test="page!=null and rows!=null">
             limit #{page},#{rows}
@@ -93,10 +84,7 @@
 
     <!-- 按照case id 查询，列出同一个case的项目列表 -->
     <select id="findByCaseId" parameterType="int" resultMap="ProjectCaseResult">
-        SELECT
-        *
-        FROM
-        `project_case`
+        SELECT * FROM `project_case`
         where case_id = #{case_id,jdbcType=INTEGER}
     </select>
 

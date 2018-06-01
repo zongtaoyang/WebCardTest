@@ -1,10 +1,11 @@
 package controller;
 
+import dto.ProjectCaseDto;
 import dto.ProjectStatistic;
+import dto.ProjectUserDto;
 import entity.Case;
 import entity.PageBean;
 import entity.Project;
-import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -109,6 +110,10 @@ public class ProjectController {
         return view;
     }
 
+
+    //==============================================================================
+    //               project
+    //==============================================================================
 
     @RequestMapping(value = "/find", method = RequestMethod.GET)
     @ResponseBody
@@ -218,9 +223,12 @@ public class ProjectController {
         return result;
     }
 
+    //==============================================================================
+    //               project_user
+    //==============================================================================
     @RequestMapping(value = "/findProjectUser", method = RequestMethod.POST)
     @ResponseBody
-    private Map<String, Object> findProjectUserByProjectId(HttpServletRequest request) throws IllegalArgumentException {
+    private Map<String, Object> findProjectUser(HttpServletRequest request) throws IllegalArgumentException {
         System.out.println(TAG + "findProjectUser->");
 
         Map<String, Object> result = new HashMap<String, Object>();
@@ -234,46 +242,16 @@ public class ProjectController {
         map.put("project_id", project_id);
         map.put("page", pageBean.getStart());
         map.put("rows", pageBean.getRows());
-        ArrayList<User> array = projectService.findProjectUser(map);
+        ArrayList<ProjectUserDto> array = projectService.findProjectUser(map);
         Long total = projectService.getProjectUserTotal(map);
-//        JSONObject result=new JSONObject();
-//        JSONArray jsonArray=JSONArray.fromObject(userList);
+
         result.put("rows", array);
         result.put("total", total);
-//        ResponseUtil.write(res, result);
 
         System.out.println(TAG + "list array= " + array);
         return result;
     }
 
-
-    @RequestMapping(value = "/findProjectCase", method = RequestMethod.POST)
-    @ResponseBody
-    private Map<String, Object> findProjectCaseByProjectId(HttpServletRequest request) throws IllegalArgumentException {
-        System.out.println(TAG + "findProjectCase->");
-
-        Map<String, Object> result = new HashMap<String, Object>();
-        String project_id = request.getParameter("project_id");
-        int page = Integer.parseInt(request.getParameter("page"));
-        int rows = Integer.parseInt(request.getParameter("rows"));
-        System.out.println(TAG + "list->project_id=" + project_id + "|page=" + page + "|rows=" + rows);
-
-        PageBean pageBean = new PageBean(page, rows);
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("project_id", project_id);
-        map.put("page", pageBean.getStart());
-        map.put("rows", pageBean.getRows());
-        ArrayList<Case> array = projectService.findProjectCase(map);
-        Long total = projectService.getProjectCaseTotal(map);
-//        JSONObject result=new JSONObject();
-//        JSONArray jsonArray=JSONArray.fromObject(userList);
-        result.put("rows", array);
-        result.put("total", total);
-//        ResponseUtil.write(res, result);
-
-        System.out.println(TAG + "list array= " + array);
-        return result;
-    }
 
     @RequestMapping(value = "/addUserToProject", method = RequestMethod.POST)
     @ResponseBody
@@ -301,9 +279,115 @@ public class ProjectController {
                 break;
             }
         }
+        return result;
+    }
 
+    @RequestMapping(value = "/deleteUserFromProject", method = RequestMethod.POST)
+    @ResponseBody
+    private ReturnObj deleteUserFromProject(HttpServletRequest request) throws IllegalArgumentException {
+
+        //获取当前处理的project id
+        int project_id = Integer.parseInt(request.getParameter("project_id"));
+        int user_id = Integer.parseInt(request.getParameter("user_id"));
+
+        System.out.println(TAG + "deleteUserFromProject->project_id=" + project_id + "|user_id=" + user_id);
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("project_id", project_id);
+        map.put("user_id", user_id);
+
+
+
+        ReturnObj result = new ReturnObj(ReturnObj.SUCCESS, ReturnObj.DELETE_SUCCESS_MSG, null);
+
+        if (projectService.deleteUserFromProject(map) == 0) {
+            result.setSuccess(ReturnObj.FAIL);
+            result.setMsg(ReturnObj.DELETE_FAIL_MSG);
+        }
 
         return result;
     }
+
+    //==============================================================================
+    //               project_case
+    //==============================================================================
+    @RequestMapping(value = "/findProjectCase", method = RequestMethod.POST)
+    @ResponseBody
+    private Map<String, Object> findProjectCaseByProjectId(HttpServletRequest request) throws IllegalArgumentException {
+        System.out.println(TAG + "findProjectCase->");
+
+        Map<String, Object> result = new HashMap<String, Object>();
+        String project_id = request.getParameter("project_id");
+        int page = Integer.parseInt(request.getParameter("page"));
+        int rows = Integer.parseInt(request.getParameter("rows"));
+        System.out.println(TAG + "list->project_id=" + project_id + "|page=" + page + "|rows=" + rows);
+
+        PageBean pageBean = new PageBean(page, rows);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("project_id", project_id);
+        map.put("page", pageBean.getStart());
+        map.put("rows", pageBean.getRows());
+        ArrayList<ProjectCaseDto> array = projectService.findProjectCase(map);
+        Long total = projectService.getProjectCaseTotal(map);
+        result.put("rows", array);
+        result.put("total", total);
+
+        System.out.println(TAG + "list array= " + array);
+        return result;
+    }
+
+
+    @RequestMapping(value = "/addCaseToProject", method = RequestMethod.POST)
+    @ResponseBody
+    private ReturnObj addCaseToProject(HttpServletRequest request) throws IllegalArgumentException {
+
+        //获取当前处理的project id
+        int project_id = Integer.parseInt(request.getParameter("project_id"));
+
+        //获取要添加的user id 列表，转换成数组
+        String case_id_str = request.getParameter("case_ids");
+
+        System.out.println(TAG + "addCaseToProject->project_id=" + project_id + "|case_id_str=" + case_id_str);
+
+        String[] caseidList = case_id_str.split(",");
+
+        ReturnObj result = new ReturnObj(ReturnObj.SUCCESS, ReturnObj.ADD_SUCCESS_MSG, null);
+
+        for (int i = 0; i < caseidList.length; i++) {
+            int case_id = Integer.parseInt(caseidList[i]);
+
+            if (projectService.addCaseToProject(project_id, case_id) == 0) {
+                result.setSuccess(ReturnObj.FAIL);
+                result.setMsg(ReturnObj.ADD_FAIL_MSG);
+                break;
+            }
+        }
+        return result;
+    }
+
+    @RequestMapping(value = "/deleteCaseFromProject", method = RequestMethod.POST)
+    @ResponseBody
+    private ReturnObj deleteCaseFromProject(HttpServletRequest request) throws IllegalArgumentException {
+
+        //获取当前处理的project id
+        int project_id = Integer.parseInt(request.getParameter("project_id"));
+        int case_id = Integer.parseInt(request.getParameter("case_id"));
+
+        System.out.println(TAG + "deleteCaseFromProject->project_id=" + project_id + "|case_id=" + case_id);
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("project_id", project_id);
+        map.put("case_id", case_id);
+
+        ReturnObj result = new ReturnObj(ReturnObj.SUCCESS, ReturnObj.DELETE_SUCCESS_MSG, null);
+
+        if (projectService.deleteCaseFromProject(map) == 0) {
+            result.setSuccess(ReturnObj.FAIL);
+            result.setMsg(ReturnObj.DELETE_FAIL_MSG);
+        }
+
+        return result;
+    }
+
 
 }

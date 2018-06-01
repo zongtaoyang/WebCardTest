@@ -13,4 +13,5 @@ public interface ProjectCaseDao extends BaseDao<ProjectCase>{
     public ArrayList<ProjectCase> findByProjectId(int id);
     public ArrayList<ProjectCase> findByProjectIdWithPage(Map<String, Object> map);
     public ArrayList<ProjectCase> findByCaseId(int id);
+    int deleteProjectCase(Map<String, Object> map);
 }

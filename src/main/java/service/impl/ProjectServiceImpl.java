@@ -1,13 +1,16 @@
 package service.impl;
 
 import dao.*;
+import dto.ProjectCaseDto;
 import dto.ProjectStatistic;
+import dto.ProjectUserDto;
 import entity.*;
 import org.springframework.stereotype.Service;
 import service.ProjectService;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -54,8 +57,10 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
     //==============================================================================
     //               project
     //==============================================================================
+
     /**
      * 查询Project信息
+     *
      * @param map
      * @return
      */
@@ -103,7 +108,7 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
 
 
     @Override
-    public Long getProjectTotal(Map<String,Object> map) {
+    public Long getProjectTotal(Map<String, Object> map) {
         return projectDao.getTotal(map);
     }
 
@@ -112,32 +117,40 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
     //               project_user
     //==============================================================================
     @Override
-    public ArrayList<User> findProjectUser(Map<String, Object> map) {
+    public ArrayList<ProjectUserDto> findProjectUser(Map<String, Object> map) {
 
-        ArrayList<User> users = new ArrayList<User>();
+        ArrayList<ProjectUserDto> projectUsersDto = new ArrayList<ProjectUserDto>();
 
-        if(map.get("project_id")!=null&&map.get("project_id")!=""){
+        if (map.get("project_id") != null && map.get("project_id") != "") {
+
             ArrayList<ProjectUser> projectUsers = projectUserDao.findByProjectIdWithPage(map);
-            for(int i=0;i<projectUsers.size();i++){
+
+            for (int i = 0; i < projectUsers.size(); i++) {
+                ProjectUser projectUser = projectUsers.get(i);
+                ProjectUserDto projectUserDto = new ProjectUserDto();
+                projectUserDto.setProject_id(projectUser.getProject_id());
+                projectUserDto.setUser_id(projectUser.getUser_id());
+                projectUserDto.setCreate_time(projectUser.getCreate_time());
                 User user = userDao.findByIntId(projectUsers.get(i).getUser_id());
-                user.setCtime(projectUsers.get(i).getCreate_time());
-                users.add(user);
+                projectUserDto.setLogin_name(user.getLogin_name());
+                projectUserDto.setUser_name(user.getUser_name());
+                projectUsersDto.add(projectUserDto);
             }
         }
 
-        return users;
+        return projectUsersDto;
     }
 
     @Override
-    public Long getProjectUserTotal(Map<String,Object> map) {
-        if(map.isEmpty()){
+    public Long getProjectUserTotal(Map<String, Object> map) {
+        if (map.isEmpty()) {
             return Long.valueOf(-1);
         }
-        if(map.get("project_id")!=null&&map.get("project_id")!=""){
+        if (map.get("project_id") != null && map.get("project_id") != "") {
             int project_id = Integer.valueOf(map.get("project_id").toString());
             return projectUserDao.getTotalByProjectId(project_id);
         }
-        if(map.get("user_id")!=null&&map.get("user_id")!=""){
+        if (map.get("user_id") != null && map.get("user_id") != "") {
             int user_id = Integer.valueOf(map.get("user_id").toString());
             return projectUserDao.getTotalByUserId(user_id);
         }
@@ -146,26 +159,49 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
 
     @Override
     public int addUserToProject(int projectId, int userId) {
-        ProjectUser projectUser =new ProjectUser(projectId, userId);
-        return projectUserDao.insert(projectUser);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("project_id", projectId);
+        map.put("user_id", userId);
+        int ret = 0;
+        if (projectUserDao.isExist(map).size() == 0) {
+            ProjectUser projectUser = new ProjectUser(projectId, userId);
+            ret = projectUserDao.insert(projectUser);
+        }
+        return ret;
     }
 
+    @Override
+    public int deleteUserFromProject(Map<String, Object> map) {
+        if (map.get("project_id") != null && map.get("project_id").toString().length() > 0
+                && map.get("user_id") != null && map.get("user_id").toString().length() > 0) {
+            return projectUserDao.deleteProjectUser(map);
+        } else {
+            return 0;
+        }
+
+    }
 
 
     //==============================================================================
     //               project_case
     //==============================================================================
     @Override
-    public ArrayList<Case> findProjectCase(Map<String, Object> map){
+    public ArrayList<ProjectCaseDto> findProjectCase(Map<String, Object> map) {
 
-        ArrayList<Case> cases = new ArrayList<Case>();
+        ArrayList<ProjectCaseDto> cases = new ArrayList<ProjectCaseDto>();
 
-        if(map.get("project_id")!=null&&map.get("project_id")!=""){
+        if (map.get("project_id") != null && map.get("project_id") != "") {
             ArrayList<ProjectCase> projectCases = projectCaseDao.findByProjectIdWithPage(map);
-            for(int i=0;i<projectCases.size();i++){
+            for (int i = 0; i < projectCases.size(); i++) {
+                ProjectCaseDto projectCaseDto = new ProjectCaseDto();
+                ProjectCase projectCase = projectCases.get(i);
+                projectCaseDto.setProject_id(projectCase.getProject_id());
+                projectCaseDto.setCase_id(projectCase.getCase_id());
+                projectCaseDto.setCreate_time(projectCase.getCreate_time());
                 Case acase = caseDao.findByIntId(projectCases.get(i).getCase_id());
-                acase.setCtime(projectCases.get(i).getCreate_time());
-                cases.add(acase);
+                projectCaseDto.setName(acase.getName());
+                projectCaseDto.setDescription(acase.getDescription());
+                cases.add(projectCaseDto);
             }
         }
 
@@ -173,19 +209,44 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
     }
 
     @Override
-    public Long getProjectCaseTotal(Map<String,Object> map) {
-        if(map.isEmpty()){
+    public Long getProjectCaseTotal(Map<String, Object> map) {
+        if (map.isEmpty()) {
             return Long.valueOf(-1);
         }
-        if(map.get("project_id")!=null&&map.get("project_id")!=""){
+        if (map.get("project_id") != null && map.get("project_id") != "") {
             int project_id = Integer.valueOf(map.get("project_id").toString());
             return projectCaseDao.getTotalByProjectId(project_id);
         }
-        if(map.get("case_id")!=null&&map.get("case_id")!=""){
+        if (map.get("case_id") != null && map.get("case_id") != "") {
             int user_id = Integer.valueOf(map.get("case_id").toString());
             return projectCaseDao.getTotalByUserId(user_id);
         }
         return Long.valueOf(-1);
+    }
+
+
+    @Override
+    public int addCaseToProject(int projectId, int caseId) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("project_id", projectId);
+        map.put("case_id", caseId);
+        int ret = 0;
+        if (projectCaseDao.isExist(map).size() == 0) {
+            ProjectCase projectCase = new ProjectCase(projectId, caseId);
+            ret = projectCaseDao.insert(projectCase);
+        }
+        return ret;
+    }
+
+    @Override
+    public int deleteCaseFromProject(Map<String, Object> map) {
+        if (map.get("project_id") != null && map.get("project_id").toString().length() > 0
+                && map.get("case_id") != null && map.get("case_id").toString().length() > 0) {
+            return projectUserDao.deleteProjectUser(map);
+        } else {
+            return 0;
+        }
+
     }
 
 

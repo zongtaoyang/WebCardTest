@@ -52,10 +52,10 @@
         }
 
         function doChangeShow() {
-            if(flag==1){
+            if (flag == 1) {
                 flag = 0;
                 drigTitle = '项目信息表（用例）';
-            }else{
+            } else {
                 flag = 1;
                 drigTitle = '项目信息表（测试员）';
             }
@@ -97,65 +97,110 @@
         }
 
         //“编辑组员”按钮响应函数
-        function doEditUser(index,row) {
+        function doEditUser(index, row) {
             $('#projectTreeGrid').datagrid('selectRow', index);// 关键在这里
-            // var row = $('#projectTreeGrid').datagrid('getSelected');
-            if (row) {
-                var id = row.id;
-                <%--createmodalwindow("查看项目组员：" + row.name, 600, 450, '${baseurl}WebCardTest/project/toeditprojectuser?id=' + id);--%>
+            console.log("doEditUser->index=" + index + "|row=" + row);
+            var rows = $('#projectTreeGrid').datagrid('getRows');
+            var projectrow = rows[index];
+            console.log("doEditUser->projectrow=" + row.id + "|" + projectrow.toString());
 
-                $('#ddv-'+index).datagrid({
-                    url:'${baseurl}WebCardTest/project/findProjectUser',
+            if (row) {
+                var project_id = row.id;
+                $('#ddv-' + index).datagrid({
+                    url: '${baseurl}WebCardTest/project/findProjectUser',
                     type: 'post',
                     queryParams: {
-                        project_id: id
+                        project_id: project_id,
                     },
                     pagination: true,//分页
-                    fitColumns:true,
-                    singleSelect:true,
-                    rownumbers:true,
-                    loadMsg:'加载中...',
-                    width:"80%",
-                    height:'auto',
-                    columns:[[
-                        {field: 'ck',checkbox: true  }, {
+                    fitColumns: true,
+                    singleSelect: true,
+                    rownumbers: true,
+                    loadMsg: '加载中...',
+                    width: "80%",
+                    height: 'auto',
+                    columns: [[
+                        {field: 'ck', checkbox: true}, {
                             field: 'login_name',//对应json中的key
                             title: '登录名',
-                            width: "35%"
+                            width: 200
                         }, {
                             field: 'user_name',//对应json中的key
                             title: '真实姓名',
-                            width: "35%"
+                            width: 200
                         }, {
-                            field: 'ctime',//对应json中的key
+                            field: 'create_time',//对应json中的key
                             title: '加入时间',
-                            width: "29%",
+                            width: 200,
                             formatter: function (date) {
                                 return new Date(date).toLocaleString();
                             }
+                        }, {
+                            field: 'do',//对应json中的key
+                            title: '操作',
+                            width: 50,
+                            formatter: function (value, row, index) {//通过此方法格式化显示内容,value表示从json中取出该单元格的值，row表示这一行的数据，是一个对象,index:行的序号+"')\"
+                                return "<a href='javascript:;' style='font-size:14px;' onclick=\"doDeleteUser('" + row.project_id+"','"+ row.case_id +"')\">【删除】</a>";
+
+                            }
                         }
                     ]],
-                    onResize:function(){
-                        $('#projectTreeGrid').datagrid('fixDetailRowHeight',index);
+                    onResize: function () {
+                        $('#projectTreeGrid').datagrid('fixDetailRowHeight', index);
                     },
-                    onLoadSuccess:function(){
-                        setTimeout(function(){
-                            $('#projectTreeGrid').datagrid('fixDetailRowHeight',index);
-                        },0);
+                    onLoadSuccess: function () {
+                        setTimeout(function () {
+                            $('#projectTreeGrid').datagrid('fixDetailRowHeight', index);
+                        }, 0);
                     }
                 });
-                $('#projectTreeGrid').datagrid('fixDetailRowHeight',index);
+                $('#projectTreeGrid').datagrid('fixDetailRowHeight', index);
             } else {
                 $.messager.alert('提示信息', '请选择一条记录！', 'warning');
                 return;
             }
 
 
+        }
 
+        function doDeleteUser(project_id, case_id) {
+            console.log("doDeleteUser->project_id=" + project_id + "|case_id=" + case_id);
+            $.ajax({
+                type: 'post',
+                url: '${baseurl}WebCardTest/project/deleteUserFromProject',
+                data: {project_id: project_id, case_id: case_id},
+                dataType: 'json',
+                success: function (res) {
+                    if (res.success) {
+                        $.messager.alert('提示信息', res.msg, 'success');
+                        doSearch('');
+                    } else {
+                        $.messager.alert('提示信息', res.msg, 'error');
+                    }
+                }
+            })
+        }
+
+        function doDeleteCase(project_id, case_id) {
+            console.log("doDeleteCase->project_id=" + project_id + "|case_id=" + case_id);
+            $.ajax({
+                type: 'post',
+                url: '${baseurl}WebCardTest/project/deleteUserFromProject',
+                data: {project_id: project_id, case_id: case_id},
+                dataType: 'json',
+                success: function (res) {
+                    if (res.success) {
+                        $.messager.alert('提示信息', res.msg, 'success');
+                        doSearch('');
+                    } else {
+                        $.messager.alert('提示信息', res.msg, 'error');
+                    }
+                }
+            })
         }
 
         //“编辑组员”按钮响应函数
-        function doAddUser(index) {
+        function toAddUser(index) {
             $('#projectTreeGrid').datagrid('selectRow', index);// 关键在这里
             var row = $('#projectTreeGrid').datagrid('getSelected');
             if (row) {
@@ -167,31 +212,32 @@
             }
 
 
-
         }
 
         //“编辑用例”按钮响应函数
-        function doEditCase(index,row) {
+        function doEditCase(index, row) {
             $('#projectTreeGrid').datagrid('selectRow', index);// 关键在这里
-            // var row = $('#projectTreeGrid').datagrid('getSelected');
+            console.log("doEditUser->index=" + index + "|row=" + row);
+            var rows = $('#projectTreeGrid').datagrid('getRows');
+            var projectrow = rows[index];
+            console.log("doEditCase->projectrow=" + row.id + "|" + projectrow.toString());
             if (row) {
                 var id = row.id;
-                <%--createmodalwindow("查看项目用例：" + row.name, 600, 450, '${baseurl}WebCardTest/project/toeditprojectcase?id=' + id);--%>
-                $('#ddv-'+index).datagrid({
-                    url:'${baseurl}WebCardTest/project/findProjectCase',
+                $('#ddv-' + index).datagrid({
+                    url: '${baseurl}WebCardTest/project/findProjectCase',
                     type: 'post',
                     queryParams: {
                         project_id: id
                     },
                     pagination: true,//分页
-                    fitColumns:true,
-                    singleSelect:true,
-                    rownumbers:true,
-                    loadMsg:'加载中...',
-                    width:"80%",
-                    height:'auto',
-                    columns:[[
-                        {field: 'ck',checkbox: true  }, {
+                    fitColumns: true,
+                    singleSelect: true,
+                    rownumbers: true,
+                    loadMsg: '加载中...',
+                    width: "80%",
+                    height: 'auto',
+                    columns: [[
+                        {field: 'ck', checkbox: true}, {
                             field: 'name',//对应json中的key
                             title: '用例名称',
                             width: "35%"
@@ -200,24 +246,32 @@
                             title: '用例描述',
                             width: "35%"
                         }, {
-                            field: 'ctime',//对应json中的key
+                            field: 'create_time',//对应json中的key
                             title: '加入时间',
                             width: "29%",
                             formatter: function (date) {
                                 return new Date(date).toLocaleString();
                             }
+                        }, {
+                            field: 'do',//对应json中的key
+                            title: '操作',
+                            width: 50,
+                            formatter: function (value, row, index) {//通过此方法格式化显示内容,value表示从json中取出该单元格的值，row表示这一行的数据，是一个对象,index:行的序号+"')\"
+                                return "<a href='javascript:;' style='font-size:14px;' onclick=\"doDeleteCase('" + row.project_id+"','"+ row.case_id +"')\">【删除】</a>";
+
+                            }
                         }
                     ]],
-                    onResize:function(){
-                        $('#projectTreeGrid').datagrid('fixDetailRowHeight',index);
+                    onResize: function () {
+                        $('#projectTreeGrid').datagrid('fixDetailRowHeight', index);
                     },
-                    onLoadSuccess:function(){
-                        setTimeout(function(){
-                            $('#projectTreeGrid').datagrid('fixDetailRowHeight',index);
-                        },0);
+                    onLoadSuccess: function () {
+                        setTimeout(function () {
+                            $('#projectTreeGrid').datagrid('fixDetailRowHeight', index);
+                        }, 0);
                     }
                 });
-                $('#projectTreeGrid').datagrid('fixDetailRowHeight',index);
+                $('#projectTreeGrid').datagrid('fixDetailRowHeight', index);
             } else {
                 $.messager.alert('提示信息', '请选择一条记录！', 'warning');
                 return;
@@ -226,7 +280,7 @@
         }
 
         //“编辑用例”按钮响应函数
-        function doAddCase(index) {
+        function toAddCase(index) {
             $('#projectTreeGrid').datagrid('selectRow', index);// 关键在这里
             var row = $('#projectTreeGrid').datagrid('getSelected');
             if (row) {
@@ -267,15 +321,15 @@
                 idField: 'id',
                 treeField: 'name',
                 view: detailview,
-                detailFormatter:function(index,row){
+                detailFormatter: function (index, row) {
                     return '<div style="padding:15px;"><table id="ddv-' + index + '"></table></div>';
                 },
-                onExpandRow: function(index,row){
+                onExpandRow: function (index, row) {
 
-                    if(flag == 0){
-                        doEditCase(index,row);
-                    }else{
-                        doEditUser(index,row);
+                    if (flag == 0) {
+                        doEditCase(index, row);
+                    } else {
+                        doEditUser(index, row);
                     }
                 }
             });
@@ -302,10 +356,12 @@
                 <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="doAdd()">添加</a>
                 <a class="easyui-linkbutton" plain="true" iconCls="icon-edit" onclick="doEdit()">修改</a>
                 <a class="easyui-linkbutton" plain="true" iconCls="icon-remove" onclick="doDelete()">删除 </a>
-                <a class="easyui-linkbutton" plain="true" iconCls="icon-reload" onclick="doChangeShow()">【测试员】or【用例】详情</a>
-                <a > | </a>
-                <a class="easyui-linkbutton" plain="true" iconCls="icon-edit" onclick="doAddCase()">添加用例</a>
-                <a class="easyui-linkbutton" plain="true" iconCls="icon-edit" onclick="doAddUser()">添加人员</a>
+                <a> | </a>
+                <a class="easyui-linkbutton" plain="true" iconCls="icon-edit" onclick="toAddCase()">添加用例</a>
+                <a class="easyui-linkbutton" plain="true" iconCls="icon-edit" onclick="toAddUser()">添加人员</a>
+                <a> | </a>
+                <a class="easyui-linkbutton" plain="true" iconCls="icon-reload"
+                   onclick="doChangeShow()">【测试员】or【用例】详情</a>
             </div>
 
             <%-- 项目查询表 --%>

@@ -12,6 +12,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entity.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,24 +31,32 @@ import service.GroupService;
 @Controller
 @RequestMapping("/WebCardTest/case")
 public class CaseController {
+    private final String TAG = "CaseController->";
     @Autowired
     private CaseService caseService;
     @Autowired
     private GroupService groupService;
 
-    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    @RequestMapping(value = "/find", method = RequestMethod.POST)
     @ResponseBody
     private Map<String, Object> find(HttpServletRequest request) throws IllegalArgumentException, IllegalAccessException {
+        System.out.println(TAG + "find...");
         Map<String, Object> result = new HashMap<String, Object>();
         Map<String, Object> map = new HashMap<String, Object>();
+
+        int page = Integer.parseInt(request.getParameter("page"));
+        int rows = Integer.parseInt(request.getParameter("rows"));
+        PageBean pageBean = new PageBean(page, rows);
+        map.put("page", pageBean.getStart());
+        map.put("rows", pageBean.getRows());
         map.put("group_id", request.getParameter("group_id"));
         map.put("begin_time", request.getParameter("begin_time"));
         map.put("end_time", request.getParameter("end_time"));
+//        System.out.println(TAG + "list->user_name=" + user_name+ "|login_name=" + login_name + "|page=" + page + "|rows=" + rows);
         List<Case> array = caseService.find(map);
-        result.put("data", array);
-        result.put("stat_code", 0);
-        result.put("info", "success");
-        result.put("total", array.size());
+        Long total = caseService.getTotal(map);
+        result.put("rows", array);
+        result.put("total", total);
         return result;
     }
 

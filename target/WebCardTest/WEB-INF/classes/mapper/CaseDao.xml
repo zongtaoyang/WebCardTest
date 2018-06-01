@@ -8,8 +8,8 @@
           <result column="case_id" javaType="String" property="case_id" />
           <result column="group_name" javaType="String" property="group_name" />
           <result column="path" javaType="String" property="path" />
-          <result column="ctime" javaType="java.sql.Timestamp" property="ctime" />
-          <result column="utime" javaType="java.sql.Timestamp" property="utime" />
+          <result column="create_time" javaType="java.sql.Timestamp" property="create_time" />
+          <result column="update_time" javaType="java.sql.Timestamp" property="update_time" />
           <result column="id" javaType="INTEGER" property="id" />
       </resultMap>
 
@@ -25,10 +25,10 @@
                and id = #{id,jdbcType=VARCHAR}
             </if>  
             <if test="begin_time != null and begin_time != ''">  
-                and ctime &gt;= #{begin_time,jdbcType=TIMESTAMP}
+                and create_time &gt;= #{begin_time,jdbcType=TIMESTAMP}
             </if>  
             <if test="end_time != null and end_time != ''">  
-                and ctime &lt;= #{end_time,jdbcType=TIMESTAMP}
+                and create_time &lt;= #{end_time,jdbcType=TIMESTAMP}
             </if>
     </select>
 
@@ -57,6 +57,18 @@
             *
         FROM
             `case`
+    </select>
+
+    <select id="getTotal" parameterType="Map" resultType="Long">
+        SELECT COUNT(*) FROM `case`
+        <where>
+            <if test="name!=null and name!='' ">
+                and name like #{name}
+            </if>
+            <if test="description!=null and description!='' ">
+                and login_name like #{login_name}
+            </if>
+        </where>
     </select>
     
     <update id="update" parameterType="entity.Case"  

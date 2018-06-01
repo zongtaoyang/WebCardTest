@@ -8,19 +8,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93620d28-ee98-4906-8cf8-0da3d520a89f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/dto/ProjectCaseDto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/dto/ProjectUserDto.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/4_QPBOC基本交易.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src-20180514-01.7z" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src-20180518-01.7z" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src-20180531-01.7z" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CaseController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/CaseController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProjectController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/ProjectController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProjectCaseDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/ProjectCaseDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProjectUserDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/ProjectUserDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Case.java" afterPath="$PROJECT_DIR$/src/main/java/entity/Case.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/ProjectCase.java" afterPath="$PROJECT_DIR$/src/main/java/entity/ProjectCase.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/ProjectService.java" afterPath="$PROJECT_DIR$/src/main/java/service/ProjectService.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/ProjectServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/service/impl/ProjectServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CaseDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CaseDao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ExecuteDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ExecuteDao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GroupDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GroupDao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HistoryDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HistoryDao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProjectCaseDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProjectCaseDao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProjectUserDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProjectUserDao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectcase.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectcase.jsp" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectuser.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectuser.jsp" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/manageproject.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/manageproject.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/WebCardTest.war" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest.war" afterPath="$PROJECT_DIR$/target/WebCardTest.war" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/WebCardTest/project/editprojectcase.jsp" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/WebCardTest/project/editprojectcase.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/WebCardTest/project/editprojectuser.jsp" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/WebCardTest/project/editprojectuser.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/WebCardTest/project/manageproject.jsp" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/WebCardTest/project/manageproject.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/controller/CaseController.class" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/controller/CaseController.class" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/controller/ProjectController.class" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/controller/ProjectController.class" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/dao/ProjectCaseDao.class" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/dao/ProjectCaseDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/dao/ProjectUserDao.class" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/dao/ProjectUserDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/entity/ProjectCase.class" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/entity/ProjectCase.class" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/mapper/ProjectCaseDao.xml" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/mapper/ProjectCaseDao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/mapper/ProjectUserDao.xml" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/mapper/ProjectUserDao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/service/ProjectService.class" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/service/ProjectService.class" />
+      <change beforePath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/service/impl/ProjectServiceImpl.class" afterPath="$PROJECT_DIR$/target/WebCardTest/WEB-INF/classes/service/impl/ProjectServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/CaseController.class" afterPath="$PROJECT_DIR$/target/classes/controller/CaseController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProjectController.class" afterPath="$PROJECT_DIR$/target/classes/controller/ProjectController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/ProjectCaseDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/ProjectCaseDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/ProjectUserDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/ProjectUserDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/ProjectCase.class" afterPath="$PROJECT_DIR$/target/classes/entity/ProjectCase.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CaseDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/CaseDao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ProjectCaseDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/ProjectCaseDao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ProjectUserDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/ProjectUserDao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/ProjectService.class" afterPath="$PROJECT_DIR$/target/classes/service/ProjectService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/impl/ProjectServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/service/impl/ProjectServiceImpl.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,51 +80,13 @@
       <file leaf-file-name="ProjectController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProjectController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="236" column="47" lean-forward="false" selection-start-line="236" selection-start-column="47" selection-end-line="236" selection-end-column="47" />
+            <state relative-caret-position="-976">
+              <caret line="330" column="61" lean-forward="false" selection-start-line="330" selection-start-column="61" selection-end-line="330" selection-end-column="61" />
               <folding>
-                <element signature="e#8727#8743#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/ProjectService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/ProjectServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-              <folding>
-                <element signature="e#3809#3810#0" expanded="true" />
-                <element signature="e#3856#3857#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manageproject.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/manageproject.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="307" column="104" lean-forward="false" selection-start-line="307" selection-start-column="104" selection-end-line="307" selection-end-column="104" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1527745627532" expanded="true" signature="10340:10352" ph="..." />
-                <marker date="1527745627532" expanded="true" signature="10340:10353" ph="..." />
+                <element signature="imports" expanded="true" />
+                <element signature="e#9154#9170#0" expanded="true" />
+                <element signature="e#11196#11212#0" expanded="true" />
+                <element signature="e#14587#14603#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,9 +95,124 @@
       <file leaf-file-name="editprojectuser.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectuser.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="108" column="60" lean-forward="false" selection-start-line="108" selection-start-column="60" selection-end-line="108" selection-end-column="60" />
+            <state relative-caret-position="1619">
+              <caret line="104" column="24" lean-forward="false" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editprojectcase.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectcase.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-158">
+              <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/CaseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="54" column="132" lean-forward="false" selection-start-line="54" selection-start-column="132" selection-end-line="54" selection-end-column="132" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/BaseServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding>
+                <element signature="e#947#948#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="118" column="8" lean-forward="false" selection-start-line="118" selection-start-column="8" selection-end-line="121" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectUserDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProjectUserDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="15" />
+              <folding>
+                <marker date="1527844091098" expanded="true" signature="678:706" ph="SELECT * FRO... project_user" />
+                <marker date="1527844091098" expanded="true" signature="1220:1726" ph="update `project_user`... " />
+                <marker date="1527844091098" expanded="true" signature="1810:1920" ph="INSERT INTO `project_user`... " />
+                <marker date="1527844091098" expanded="true" signature="2001:2044" ph="DELETE FROM `project_user`... " />
+                <marker date="1527844091098" expanded="true" signature="2121:2205" ph="DELETE FROM `project_user`... " />
+                <marker date="1527844091098" expanded="true" signature="2309:2371" ph="SELECT * FRO... project_user" />
+                <marker date="1527844091098" expanded="true" signature="2471:2564" ph="SELECT COUNT... project_user" />
+                <marker date="1527844091098" expanded="true" signature="2661:2748" ph="SELECT COUNT... project_user" />
+                <marker date="1527844091098" expanded="true" signature="2899:2985" ph="SELECT * FRO... project_user" />
+                <marker date="1527844091098" expanded="true" signature="3144:3230" ph="SELECT * FRO... project_user" />
+                <marker date="1527844091098" expanded="true" signature="3470:3550" ph="SELECT * FRO... project_user" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaseDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CaseDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1541">
+              <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
+              <folding>
+                <marker date="1527862668503" expanded="true" signature="1948:2042" ph="SELECT * FRO... case" />
+                <marker date="1527862668503" expanded="true" signature="2135:2187" ph="SELECT * FRO... case" />
+                <marker date="1527862668503" expanded="true" signature="2683:3295" ph="update `case`... " />
+                <marker date="1527862668503" expanded="true" signature="3376:3724" ph="INSERT INTO `case`... " />
+                <marker date="1527862668503" expanded="true" signature="3799:3834" ph="DELETE FROM `case`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Case.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/Case.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <folding>
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#891#892#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDao.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding>
+                <marker date="1527862668567" expanded="true" signature="1089:1185" ph="SELECT * FRO... user" />
+                <marker date="1527862668567" expanded="true" signature="1301:1321" ph="SELECT * FRO... user" />
+                <marker date="1527862668567" expanded="true" signature="2322:2946" ph="update `user`... " />
+                <marker date="1527862668567" expanded="true" signature="3025:3389" ph="INSERT INTO `user`... " />
+                <marker date="1527862668567" expanded="true" signature="3465:3500" ph="DELETE FROM `user`... " />
+                <marker date="1527862668567" expanded="true" signature="3594:3677" ph="SELECT * FRO... user" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,6 +248,7 @@
       <find>toeditprojectcase</find>
       <find>toeditprojectuser</find>
       <find>width</find>
+      <find>addUserToProject</find>
     </findStrings>
     <replaceStrings>
       <replace>project</replace>
@@ -157,10 +266,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/main.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/welcome.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/MainAction.java" />
         <option value="$PROJECT_DIR$/target/WebCardTest/login.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/project.jsp" />
@@ -193,21 +298,25 @@
         <option value="$PROJECT_DIR$/src/main/java/dto/ProjectStatistic.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/main.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/common/jquery-easyui-1.5.5.1/demo/demo.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ProjectUserDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/ProjectUserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/Case.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/CaseDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/ProjectController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ProjectCaseDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/ProjectCaseDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectcase.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/common_js.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/user/edituser.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/user/manageuser.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/dto/ProjectUserDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/ProjectUserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/ProjectCase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/ProjectCaseDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ProjectCaseDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ProjectUserDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/manageproject.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectuser.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/dto/ProjectCaseDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/ProjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/ProjectController.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/impl/ProjectServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectuser.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectcase.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/CaseController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/CaseDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/Case.java" />
       </list>
     </option>
   </component>
@@ -367,6 +476,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebCardTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebCardTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -480,26 +597,26 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PM" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\data" />
-      <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp" />
-      <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\WEB-INF" />
-      <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\WEB-INF\WebCardTest\project" />
-      <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\WEB-INF\WebCardTest\case" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="process" />
-      <recent name="controller" />
-      <recent name="entity" />
-      <recent name="dao" />
-      <recent name="service.impl" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\WEB-INF\WebCardTest\project" />
       <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\WEB-INF\WebCardTest" />
       <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\common" />
       <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\common\easyui-1.3.4" />
       <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\WEB-INF" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dto" />
+      <recent name="process" />
+      <recent name="controller" />
+      <recent name="entity" />
+      <recent name="dao" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\data" />
+      <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp" />
+      <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\WEB-INF" />
+      <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\WEB-INF\WebCardTest\project" />
+      <recent name="D:\WORK\IdeaProjects\WebCardTest\src\main\webapp\WEB-INF\WebCardTest\case" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1094,12 +1211,12 @@
       <workItem from="1527464942120" duration="704000" />
       <workItem from="1527596448447" duration="3563000" />
       <workItem from="1527635474420" duration="377000" />
-      <workItem from="1527637125609" duration="19283000" />
+      <workItem from="1527637125609" duration="43931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301473000" />
+    <option name="totallyTimeSpent" value="326121000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1115,7 +1232,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43908322" sideWeight="0.33154505" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43961352" sideWeight="0.33422747" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1132,7 +1249,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43961352" sideWeight="0.66845495" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43961352" sideWeight="0.66577256" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21083692" sideWeight="0.48733413" order="0" side_tool="false" content_ui="combo" />
@@ -1154,7 +1271,7 @@
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43908322" sideWeight="0.33154505" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43961352" sideWeight="0.33422747" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1162,7 +1279,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15236051" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15236051" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903846" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1173,13 +1290,13 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43908322" sideWeight="0.66845495" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43961352" sideWeight="0.66577256" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20010729" sideWeight="0.48733413" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21083692" sideWeight="0.48733413" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19903433" sideWeight="0.51266587" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19903433" sideWeight="0.51266587" order="6" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -1201,52 +1318,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProjectDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding>
-            <marker date="1526798974392" expanded="true" signature="1065:1161" ph="SELECT * FRO... user" />
-            <marker date="1526798974392" expanded="true" signature="1277:1297" ph="SELECT * FRO... user" />
-            <marker date="1526798974392" expanded="true" signature="2298:2922" ph="update User... " />
-            <marker date="1526798974392" expanded="true" signature="3001:3365" ph="INSERT INTO User... " />
-            <marker date="1526798974392" expanded="true" signature="3441:3476" ph="DELETE FROM User... " />
-            <marker date="1526798974392" expanded="true" signature="3570:3653" ph="SELECT * FRO... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/ajax_js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/images/blocks.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/images/layout-browser-hd-bg.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/common/images/leader.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1345,24 +1416,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/ProjectUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="13" column="62" lean-forward="false" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1409,34 +1466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/BaseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CaseDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="78" lean-forward="false" selection-start-line="6" selection-start-column="78" selection-end-line="6" selection-end-column="78" />
-          <folding>
-            <marker date="1527429960287" expanded="true" signature="1912:2006" ph="SELECT * FRO... case" />
-            <marker date="1527429960287" expanded="true" signature="2099:2151" ph="SELECT * FRO... case" />
-            <marker date="1527429960287" expanded="true" signature="2262:2874" ph="update `case`... " />
-            <marker date="1527429960287" expanded="true" signature="2955:3303" ph="INSERT INTO `case`... " />
-            <marker date="1527429960287" expanded="true" signature="3378:3413" ph="DELETE FROM `case`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProjectDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1454,64 +1483,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProjectUserDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="59" column="4" lean-forward="true" selection-start-line="59" selection-start-column="4" selection-end-line="67" selection-end-column="13" />
-          <folding>
-            <marker date="1527428361241" expanded="true" signature="678:706" ph="SELECT * FRO... project_user" />
-            <marker date="1527428361241" expanded="true" signature="1186:1692" ph="update `project_user`... " />
-            <marker date="1527428361241" expanded="true" signature="1776:1859" ph="INSERT INTO `project_user`... " />
-            <marker date="1527428361241" expanded="true" signature="1940:1983" ph="DELETE FROM `project_user`... " />
-            <marker date="1527428361241" expanded="true" signature="2084:2154" ph="SELECT * FRO... project_user" />
-            <marker date="1527428361241" expanded="true" signature="2254:2347" ph="SELECT COUNT... project_user" />
-            <marker date="1527428361241" expanded="true" signature="2444:2531" ph="SELECT COUNT... project_user" />
-            <marker date="1527428361241" expanded="true" signature="2682:2768" ph="SELECT * FRO... project_user" />
-            <marker date="1527428361241" expanded="true" signature="2927:3013" ph="SELECT * FRO... project_user" />
-            <marker date="1527428361241" expanded="true" signature="3253:3357" ph="SELECT * FRO... project_user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProjectCaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/CaseDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProjectCaseDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="90" column="33" lean-forward="false" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
-          <folding>
-            <marker date="1527604372182" expanded="true" signature="666:726" ph="SELECT * FRO... project_case" />
-            <marker date="1527604372182" expanded="true" signature="1230:1593" ph="update `project_case`... " />
-            <marker date="1527604372182" expanded="true" signature="1677:1760" ph="INSERT INTO `project_case`... " />
-            <marker date="1527604372182" expanded="true" signature="1841:1884" ph="DELETE FROM `project_case`... " />
-            <marker date="1527604372182" expanded="true" signature="1985:2087" ph="SELECT * FRO... project_case" />
-            <marker date="1527604372182" expanded="true" signature="2238:2332" ph="SELECT * FRO... project_case" />
-            <marker date="1527604372182" expanded="true" signature="2491:2598" ph="SELECT * FRO... project_case" />
-            <marker date="1527604372182" expanded="true" signature="2792:2885" ph="SELECT COUNT... project_case" />
-            <marker date="1527604372182" expanded="true" signature="2982:3069" ph="SELECT COUNT... project_case" />
-            <marker date="1527604372182" expanded="true" signature="3215:3319" ph="SELECT * FRO... project_case" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProjectUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="11" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1550,51 +1525,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectcase.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="54" column="41" lean-forward="false" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/Tool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="81" column="35" lean-forward="false" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectuser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="108" column="60" lean-forward="false" selection-start-line="108" selection-start-column="60" selection-end-line="108" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/manageproject.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="307" column="104" lean-forward="false" selection-start-line="307" selection-start-column="104" selection-end-line="307" selection-end-column="104" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1527745627532" expanded="true" signature="10340:10352" ph="..." />
-            <marker date="1527745627532" expanded="true" signature="10340:10353" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1609,31 +1544,265 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProjectController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/BaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="236" column="47" lean-forward="false" selection-start-line="236" selection-start-column="47" selection-end-line="236" selection-end-column="47" />
+        <state relative-caret-position="92">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dto/ProjectUserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-874">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="27" />
           <folding>
-            <element signature="e#8727#8743#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="false" />
+            <element signature="e#290#291#0" expanded="false" />
+            <element signature="e#323#324#0" expanded="false" />
+            <element signature="e#351#352#0" expanded="false" />
+            <element signature="e#385#386#0" expanded="false" />
+            <element signature="e#418#419#0" expanded="false" />
+            <element signature="e#467#468#0" expanded="false" />
+            <element signature="e#511#512#0" expanded="false" />
+            <element signature="e#542#543#0" expanded="false" />
+            <element signature="e#572#573#0" expanded="false" />
+            <element signature="e#615#616#0" expanded="false" />
+            <element signature="e#653#654#0" expanded="false" />
+            <element signature="e#689#690#0" expanded="false" />
+            <element signature="e#721#722#0" expanded="false" />
+            <element signature="e#771#772#0" expanded="false" />
+            <element signature="e#813#814#0" expanded="false" />
+            <element signature="e#850#851#0" expanded="false" />
+            <element signature="e#883#884#0" expanded="false" />
+            <element signature="e#935#936#0" expanded="false" />
+            <element signature="e#979#980#0" expanded="false" />
+            <element signature="e#1020#1021#0" expanded="false" />
+            <element signature="e#1054#1055#0" expanded="false" />
+            <element signature="e#1111#1112#0" expanded="false" />
+            <element signature="e#1157#1158#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/BaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/ProjectUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/ProjectCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="24" column="62" lean-forward="false" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProjectUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dto/ProjectCaseDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/ProjectService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state relative-caret-position="446">
+          <caret line="29" column="45" lean-forward="false" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProjectCaseDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <marker date="1527843065350" expanded="true" signature="666:723" ph="SELECT * FRO... project_case" />
+            <marker date="1527843065350" expanded="true" signature="1237:1600" ph="update `project_case`... " />
+            <marker date="1527843065350" expanded="true" signature="1684:1794" ph="INSERT INTO `project_case`... " />
+            <marker date="1527843065350" expanded="true" signature="1875:1918" ph="DELETE FROM `project_case`... " />
+            <marker date="1527843065350" expanded="true" signature="1995:2079" ph="DELETE FROM `project_case`... " />
+            <marker date="1527843065350" expanded="true" signature="2183:2245" ph="SELECT * FRO... project_case" />
+            <marker date="1527843065350" expanded="true" signature="2396:2466" ph="SELECT * FRO... project_case" />
+            <marker date="1527843065350" expanded="true" signature="2625:2711" ph="SELECT * FRO... project_case" />
+            <marker date="1527843065350" expanded="true" signature="2905:2998" ph="SELECT COUNT... project_case" />
+            <marker date="1527843065350" expanded="true" signature="3095:3182" ph="SELECT COUNT... project_case" />
+            <marker date="1527843065350" expanded="true" signature="3328:3408" ph="SELECT * FRO... project_case" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProjectCaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/manageproject.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-296">
+          <caret line="217" column="17" lean-forward="false" selection-start-line="217" selection-start-column="17" selection-end-line="217" selection-end-column="17" />
+          <folding>
+            <marker date="1527844091083" expanded="true" signature="5613:5628" ph="..." />
+            <marker date="1527844091083" expanded="true" signature="10479:10494" ph="..." />
+            <marker date="1527844091083" expanded="true" signature="12991:13003" ph="..." />
+            <marker date="1527844091083" expanded="true" signature="12991:13004" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/ProjectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state relative-caret-position="262">
+          <caret line="193" column="78" lean-forward="false" selection-start-line="193" selection-start-column="78" selection-end-line="193" selection-end-column="78" />
           <folding>
-            <element signature="e#3809#3810#0" expanded="true" />
-            <element signature="e#3856#3857#0" expanded="true" />
+            <element signature="e#3898#3899#0" expanded="true" />
+            <element signature="e#3945#3946#0" expanded="true" />
+            <element signature="e#4313#4329#0" expanded="true" />
+            <element signature="e#7089#7105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-976">
+          <caret line="330" column="61" lean-forward="false" selection-start-line="330" selection-start-column="61" selection-end-line="330" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9154#9170#0" expanded="true" />
+            <element signature="e#11196#11212#0" expanded="true" />
+            <element signature="e#14587#14603#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectuser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1619">
+          <caret line="104" column="24" lean-forward="false" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/CaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="54" column="132" lean-forward="false" selection-start-line="54" selection-start-column="132" selection-end-line="54" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/BaseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#947#948#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="118" column="8" lean-forward="false" selection-start-line="118" selection-start-column="8" selection-end-line="121" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/WebCardTest/project/editprojectcase.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProjectUserDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="15" />
+          <folding>
+            <marker date="1527844091098" expanded="true" signature="678:706" ph="SELECT * FRO... project_user" />
+            <marker date="1527844091098" expanded="true" signature="1220:1726" ph="update `project_user`... " />
+            <marker date="1527844091098" expanded="true" signature="1810:1920" ph="INSERT INTO `project_user`... " />
+            <marker date="1527844091098" expanded="true" signature="2001:2044" ph="DELETE FROM `project_user`... " />
+            <marker date="1527844091098" expanded="true" signature="2121:2205" ph="DELETE FROM `project_user`... " />
+            <marker date="1527844091098" expanded="true" signature="2309:2371" ph="SELECT * FRO... project_user" />
+            <marker date="1527844091098" expanded="true" signature="2471:2564" ph="SELECT COUNT... project_user" />
+            <marker date="1527844091098" expanded="true" signature="2661:2748" ph="SELECT COUNT... project_user" />
+            <marker date="1527844091098" expanded="true" signature="2899:2985" ph="SELECT * FRO... project_user" />
+            <marker date="1527844091098" expanded="true" signature="3144:3230" ph="SELECT * FRO... project_user" />
+            <marker date="1527844091098" expanded="true" signature="3470:3550" ph="SELECT * FRO... project_user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CaseDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1541">
+          <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
+          <folding>
+            <marker date="1527862668503" expanded="true" signature="1948:2042" ph="SELECT * FRO... case" />
+            <marker date="1527862668503" expanded="true" signature="2135:2187" ph="SELECT * FRO... case" />
+            <marker date="1527862668503" expanded="true" signature="2683:3295" ph="update `case`... " />
+            <marker date="1527862668503" expanded="true" signature="3376:3724" ph="INSERT INTO `case`... " />
+            <marker date="1527862668503" expanded="true" signature="3799:3834" ph="DELETE FROM `case`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Case.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#891#892#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <marker date="1527862668567" expanded="true" signature="1089:1185" ph="SELECT * FRO... user" />
+            <marker date="1527862668567" expanded="true" signature="1301:1321" ph="SELECT * FRO... user" />
+            <marker date="1527862668567" expanded="true" signature="2322:2946" ph="update `user`... " />
+            <marker date="1527862668567" expanded="true" signature="3025:3389" ph="INSERT INTO `user`... " />
+            <marker date="1527862668567" expanded="true" signature="3465:3500" ph="DELETE FROM `user`... " />
+            <marker date="1527862668567" expanded="true" signature="3594:3677" ph="SELECT * FRO... user" />
           </folding>
         </state>
       </provider>
